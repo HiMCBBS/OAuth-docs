@@ -1,4 +1,4 @@
-# 米坛社区 OAuth API 文档
+# HiMCBBS OAuth API 文档
 
 ### 1. 获取 申请 客户端ID 和 客户端密钥
 ```
@@ -6,14 +6,14 @@
 客户端密钥：客户端ID对应的密钥，访问用户资源时用来验证应用的合法性 
 权限类型： 用于判断权限
 ```
-### 2. 放置 米坛社区帐号 登录 按钮
+### 2. 放置 HiMCBBS论坛帐号 登录 按钮
 
-将米坛社区帐号 登录 按钮或选项放入您的APP或者网页  
+将HiMCBBS帐号 登录 按钮或选项放入您的APP或者网页  
 
 ### 3. 唤起接口获取授权码(Authorization Code)
 
 用户跳转地址：  
-```https://www.bandbbs.cn/oauth2/authorize```  
+```https://www.himcbbs.com/oauth2/authorize```  
 
 请求参数：  
 |  参数   | 说明  |
@@ -26,11 +26,11 @@
 | scope | 申请的权限类型，以 %20 分割多个权限  |
 
 例如：  
-```https://www.bandbbs.cn/oauth2/authorize?type=authorization_code&client_id=2550505&redirect_uri=https://test.bandbbs.cn/callback.php&response_type=code&scope=user%3Aread%20user%3Awrite&state=7a990681fc5c697092236ee1e4ece2d0```  
+```https://www.himcbbs.com/oauth2/authorize?type=authorization_code&client_id=2550505&redirect_uri=https://test.himcbbs.com/callback.php&response_type=code&scope=user%3Aread%20user%3Awrite&state=7a990681fc5c697092236ee1e4ece2d0```  
 
 返回说明：  
 1. 如果用户成功登录授权，则会跳转到指定的回调地址，并在redirect_uri地址后带上Authorization Code和原始的state值。如：  
-```https://test.bandbbs.cn/callback.php?code=988940bb8e7ebcae2fdfa77f2c825cd7&state=7a990681fc5c697092236ee1e4ece2d0```
+```https://test.himcbbs.com/callback.php?code=988940bb8e7ebcae2fdfa77f2c825cd7&state=7a990681fc5c697092236ee1e4ece2d0```
 
 
 |  参数   | 说明  |
@@ -46,7 +46,7 @@
 此步骤必须在您的应用服务器完成
 
 请求地址：  
-```https://www.bandbbs.cn/api/oauth2/token```  
+```https://www.himcbbs.com/api/oauth2/token```  
 请求方法：  
 POST 
 
@@ -81,7 +81,7 @@ POST
 对于获取当前token的信息 请使用：
 
 请求地址：  
-```https://www.bandbbs.cn/api/oauth2/token```  
+```https://www.himcbbs.com/api/oauth2/token```  
 请求方法：  
 GET
 
@@ -120,7 +120,7 @@ GET
 此步骤必须在您的应用服务器完成
 
 请求地址：  
-```https://www.bandbbs.cn/api/oauth2/token```  
+```https://www.himcbbs.com/api/oauth2/token```  
 请求方法：  
 POST 
 
